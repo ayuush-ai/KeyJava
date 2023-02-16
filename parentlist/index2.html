@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/e07be0b1c4.js">
+</head>
+<style>
+    body {
+        background: linear-gradient(-45deg, #f403d1, #64b5f6);
+}
+
+.card-block .btn-outline-primary {
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.card {
+  margin: 20px 0;
+}
+
+/* Flip Cards CSS */
+.card-container {
+  perspective: 500px;
+}
+.card-flip {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  height: auto;
+  transition: all 0.5s ease-out;
+  background: white;
+  border: none;
+}
+
+.card-flip div {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.card-flip .front {
+  position: relative;
+  z-index: 1;
+}
+
+.card-flip .back {
+  position: relative;
+  z-index: 0;
+  transform: rotateY(-180deg);
+}
+
+.card-container:hover .card-flip {
+  transform: rotateY(180deg);
+}
+
+</style>
+<script>
+    $(document).ready(function() {
+  var front = document.getElementsByClassName("front");
+  var back = document.getElementsByClassName("back");
+
+  var highest = 0;
+  var absoluteSide = "";
+
+  for (var i = 0; i < front.length; i++) {
+    if (front[i].offsetHeight > back[i].offsetHeight) {
+      if (front[i].offsetHeight > highest) {
+        highest = front[i].offsetHeight;
+        absoluteSide = ".front";
+      }
+    } else if (back[i].offsetHeight > highest) {
+      highest = back[i].offsetHeight;
+      absoluteSide = ".back";
+    }
+  }
+  $(".front").css("height", highest);
+  $(".back").css("height", highest);
+  $(absoluteSide).css("position", "absolute");
+});
+
+</script>
+
+<body>
+    
+
+       
+<div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 card-container">
+        <div class="card card-flip">
+          <div class="front card-block">
+           
+            <span class="card-img-top fa" style="font-size: 4em"></span>
+            <br>
+            <h4 class="card-title">Abstraction</h4>
+            <br>
+            <h6 class="card-subtitle text-muted">It is used to build an empty array list</h6>
+            <br>
+            <p class="card-text">Data abstraction is the process of hiding certain details and showing only essential information to the user.</p>
+          </div>
+          <div class="back card-block">
+            <p>
+              Click below for more info
+            </p>
+            <a href="abstract.html" class="btn btn-outline-primary">Dry Run</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 card-container">
+        <div class="card card-flip">
+          <div class="front card-block">
+            <span class="card-img-top fa" style="font-size: 4em"></span>
+            <br>
+            <h4 class="card-title">Encapsulation</h4>
+            <br>
+            <h6 class="card-subtitle text-muted">Encapsulation is a process of wrapping similar code in one place</h6>
+            <br>
+            <p class="card-text">Programming languages such as Java use encapsulation in the form of classes.</p>
+            
+          </div>
+          <div class="back card-block">
+            <p>Click below for more info</p>
+            <a href="ens.html" class="btn btn-outline-primary">Dry Run</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 card-container">
+        <div class="card card-flip">
+          <div class="front card-block">
+            <span class="card-img-top fa" style="font-size: 4em"></span>
+            <br>
+            <h4 class="card-title">Inheritance</h4>
+            <br>
+            <h6 class="card-subtitle text-muted">Inheritance is one of the core concepts of object-oriented programming languages</h6>
+            <br>
+            <p class="card-text">Inheritance is the process by which genetic information is passed on from parent to child.</p>
+          </div>
+          <div class="back card-block">
+            <p>Click below for more info</p>
+            <a href="inh.html" class="btn btn-outline-primary">Dry Run</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 card-container">
+        <div class="card card-flip">
+          <div class="front card-block">
+            <span class="card-img-top fa" style="font-size: 4em"></span>
+            <br>
+            <h4 class="card-title">Polymorphism</h4>
+            <br>
+            <h6 class="card-subtitle text-muted">Polymorphism means "many forms"</h6>
+            <br>
+            <p class="card-text">Polymorphism in programming gives a program the ability to redefine methods for derived classes.</p>
+          </div>
+          <div class="back card-block">
+            <p>
+              Click below for more info
+            </p>
+            <a href="pol.html" class="btn btn-outline-primary">Dry run</a>
+          </div>
+        </div>
+      </div>
+     
+     
+    </div>
+  </div>
+
+
+  
+</body>
+</html>
+
+
+
+
+
+
